@@ -1,0 +1,82 @@
+@extends('layouts.main')
+@section('content')
+
+<!--begin::Content-->
+<div id="kt_app_content" class="app-content flex-column-fluid">
+    <!--begin::Content container-->
+    <div id="kt_app_content_container" class="app-container container-fluid">
+        <!--begin::Row-->
+        <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
+            <!--begin::Col-->
+
+            <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-md-5 mb-xl-10">
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
+                <div class="card">
+                    <div class="card-body">
+                        <form class="row mt-3" method="POST" action="{{ route('kelola_banner.update', $data_edit->id) }}" enctype="multipart/form-data">
+                            @csrf
+                            @method("PUT")
+
+                            <div class="form-group col-md-6">
+                                <label class="">Judul</label>
+                                <div class="">
+                                    <input value="{{ $data_edit->judul }}" type="text" name="judul" class="form-control form-control-normal" placeholder="Judul...">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label class="">Urutan</label>
+                                <div class="">
+                                    <input value="{{ $data_edit->urutan }}" type="number" name="urutan" class="form-control form-control-normal" placeholder="Urutan...">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <label class="">Gambar Max: 500kb</label>
+                                <div class="">
+                                    <input onchange="readURL(this);" type="file" name="gambar" class="form-control form-control-normal mb-2">
+                                    <img style="border: solid gray 1px; padding:6px; border-radius:6px;" height="80px" id="gambar" src="{{ asset($data_edit->gambar) }}" alt="" />
+                                </div>
+                                <script>
+                                    function readURL(input) {
+                                        if (input.files && input.files[0]) {
+                                            var reader = new FileReader();
+                                            reader.onload = function(e) {
+                                                $('#gambar').attr('src', e.target.result);
+                                            };
+                                            reader.readAsDataURL(input.files[0]);
+                                        }
+                                    }
+                                </script>
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <div class="">
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-save" style="margin-right: 8px;"></i> Simpan </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Row-->
+
+    </div>
+    <!--end::Content container-->
+</div>
+<!--end::Content-->
+
+@endsection

@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+
+    <FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
+      SetHandler application/x-httpd-alt-php81___lsphp
+    </FilesMatch>
+    
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
