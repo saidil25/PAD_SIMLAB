@@ -101,7 +101,7 @@
                                 </div>
 
                                 {{-- <div class="col-md-2 form-group mt-3"> --}}
-                                    <input type="hidden" class="form-control" value="1" name="jumlah_sampel[]" id="jumlah_sampel[]" placeholder="Jumlah" required>
+                                <input type="hidden" class="form-control" value="1" name="jumlah_sampel[]" id="jumlah_sampel[]" placeholder="Jumlah" required>
                                 {{-- </div> --}}
 
                                 <div class="col-md-1 form-group mt-3">
@@ -139,7 +139,7 @@
                                 </div>
 
                                 {{-- <div class="col-md-2 form-group mt-3"> --}}
-                                    <input type="hidden" class="form-control" value="1" name="jumlah_sampel[]" id="jumlah_sampel[]" placeholder="Jumlah" required>
+                                <input type="hidden" class="form-control" value="1" name="jumlah_sampel[]" id="jumlah_sampel[]" placeholder="Jumlah" required>
                                 {{-- </div> --}}
 
                                 <div class="col-md-1 form-group mt-3">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\JenisModel;
 use Illuminate\Http\Request;
 use App\Models\TransaksiProdukModel;
 
@@ -25,7 +26,19 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        //
+        $toptitle = 'Fitur';
+        $title = 'Pengajuan';
+        $subtitle = 'Tambah Produk';
+
+        $data_jenis_pengujian = JenisModel::with('parameter_uji')
+            ->get();
+
+        return view('admin.pembayaran.create-produk', compact(
+            'toptitle',
+            'title',
+            'subtitle',
+            'data_jenis_pengujian',
+        ));
     }
 
     /**
@@ -36,7 +49,28 @@ class ProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id_transaksi' => 'required',
+            'nama' => 'required',
+        ]);
+
+
+        $dataUp['nama'] = $request->nama;
+        $dataUp['id_parameter_uji'] = $request->id_param_uji;
+        $dataUp['no_order'] = $request->no_order;
+        $dataUp['kode_sampel'] = $request->kode_sampel;
+        $dataUp['jumlah'] = $request->jumlah;
+
+        $data_input = TransaksiProdukModel::create([
+            'id_transaksi' => $request->id_transaksi,
+            'nama' => $request->nama,
+            'id_parameter_uji' => $request->id_param_uji,
+            'no_order' => $request->no_order,
+            'kode_sampel' => $request->kode_sampel,
+            'jumlah' => $request->jumlah,
+        ]);
+
+        return redirect()->route('pengajuan_uji.edit', $request->id_transaksi)->with(['success' => 'Data Berhasil Disimpan']);
     }
 
     /**
@@ -47,8 +81,21 @@ class ProdukController extends Controller
      */
     public function show($id)
     {
-        $data_edit = TransaksiProdukModel::where('id', $id)->first();
-        return view('admin.pembayaran.edit-produk', compact('data_edit'));
+        $toptitle = 'Fitur';
+        $title = 'Pengajuan';
+        $subtitle = 'Tambah Produk';
+
+        $id_transaksi = $id;
+        $data_jenis_pengujian = JenisModel::with('parameter_uji')
+            ->get();
+
+        return view('admin.pembayaran.create-produk', compact(
+            'toptitle',
+            'title',
+            'subtitle',
+            'id_transaksi',
+            'data_jenis_pengujian',
+        ));
     }
 
     /**
@@ -61,14 +108,17 @@ class ProdukController extends Controller
     {
         $toptitle = 'Fitur';
         $title = 'Pengajuan';
-        $subtitle = 'Tindak Lanjut Pengajuan';
+        $subtitle = 'Edit Produk';
 
-        $data_edit = TransaksiProdukModel::with('parameter_uji')->where('id', $id)->first();
+        $data_jenis_pengujian = JenisModel::with('parameter_uji')
+            ->get();
+        $data_edit = TransaksiProdukModel::with('parameter_uji.jenis')->where('id', $id)->first();
 
         return view('admin.pembayaran.edit-produk', compact(
             'toptitle',
             'title',
             'subtitle',
+            'data_jenis_pengujian',
             'data_edit'
         ));
     }
@@ -88,6 +138,7 @@ class ProdukController extends Controller
 
         $data_up = TransaksiProdukModel::where('id', $id)->first();
         $dataUp['nama'] = $request->nama;
+        $dataUp['id_parameter_uji'] = $request->id_param_uji;
         $dataUp['no_order'] = $request->no_order;
         $dataUp['kode_sampel'] = $request->kode_sampel;
         $dataUp['jumlah'] = $request->jumlah;

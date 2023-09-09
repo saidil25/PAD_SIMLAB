@@ -27,7 +27,7 @@
                             @csrf
                             @method("PUT")
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 Nama Pelanggan:<br>
                                 <strong>{{ strtoupper($data_edit->user->name) }}</strong><br><br>
                                 Alamat Pelanggan:<br>
@@ -41,8 +41,20 @@
                                 Tanggal Order:<br>
                                 <strong>{{ date('d-m-Y', strtotime($data_edit->created_at)) }}</strong><br>
                             </div>
+                            
+                            <div class="form-group col-md-4">
+                                <div id="werwer" class="form-group">
+                                    <label for="role">No.Pesanan</label>
+                                    <input class="form-control" name="no_order" id="no_pesanan" placeholder="No.Pesanan" value="{{ $data_edit->no_order }}">
+                                </div>
 
-                            <div class="form-group col-md-6">
+                                <div id="werwer" class="form-group mt-3">
+                                    <label for="role">Kode Sampel</label>
+                                    <input class="form-control" name="kode_sampel" id="kode_sampel" placeholder="Kode Sampel" value="{{ $data_edit->kode_sampel }}">
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-4">
                                 <label for="role">Ubah Status Order</label>
                                 <select class="form-select" data-control="select2" id="status_bayar" name="status_bayar">
                                     <option @if($data_edit->status_bayar=='Ditolak' ) selected @endif>Ditolak</option>
@@ -56,26 +68,16 @@
 
                                 </select>
 
-                                <div id="module-1" class="form-group1 mt-3">
-                                    <label for="role">No.Pesanan</label>
-                                    <input class="form-control" name="no_order" id="no_pesanan" placeholder="No.Pesanan" value="{{ $data_edit->no_order }}" required>
-                                </div>
-
-                                <div id="module-2" class="form-group1 mt-3">
-                                    <label for="role">Kode Sampel</label>
-                                    <input class="form-control" name="kode_sampel" id="kode_sampel" placeholder="Kode Sampel" value="{{ $data_edit->kode_sampel }}" required>
-                                </div>
-
                                 {{-- <div class="d-flex flex-row justify-content-between">
 
                                     <div id="module-2" class="form-group1 mt-3 w-25 mr-3" id="jumlah_sampel">
                                         <label for="role">Jumlah Sampel</label>
-                                        <input type="number" class="form-control" name="jumlah_sampel" id="jumlah_sampel" value="" required>
+                                        <input type="number" class="form-control" name="jumlah_sampel" id="jumlah_sampel" value="">
                                     </div>
     
                                     <div id="module-2" class="form-group1 mt-3 w-75" id="kode_sampel">
                                         <label for="role">Satuan Sampel</label>
-                                        <input class="form-control" name="satuan_sampel" id="satuan_sampel" value="" required>
+                                        <input class="form-control" name="satuan_sampel" id="satuan_sampel" value="">
                                     </div>
 
                                 </div>
@@ -108,15 +110,15 @@
                                     // hide all modules
                                     if (value == 'Sudah Dibayar') {
                                         $("div.form-group1").show();
-                                        document.getElementById("no_pesanan").required = true;
-                                        document.getElementById("kode_sampel").required = true;
+                                        // document.getElementById("no_pesanan").required = true;
+                                        // document.getElementById("kode_sampel").required = true;
                                         document.getElementById("jumlah_sampel").required = true;
                                         document.getElementById("satuan_sampel").required = true;
                                         document.getElementById("bentuk_sampel").required = true;
                                     } else {
                                         modules.hide();
-                                        document.getElementById("no_pesanan").required = false;
-                                        document.getElementById("kode_sampel").required = false;
+                                        // document.getElementById("no_pesanan").required = false;
+                                        // document.getElementById("kode_sampel").required = false;
                                         document.getElementById("jumlah_sampel").required = false;
                                         document.getElementById("satuan_sampel").required = false;
                                         document.getElementById("bentuk_sampel").required = false;
@@ -132,6 +134,17 @@
                             $total = 0;
                             @endphp
 
+                            <a href="{{ route('admin_produk_uji.show', $data_edit->id) }}" class="btn btn-sm btn-primary">
+                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                <span class="svg-icon svg-icon-2">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="currentColor" />
+                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                {{ 'Tambah Produk Uji' }}
+                            </a>
+
                             <div class="table-responsive">
                                 @csrf
                                 <table id="example" class="table table-striped" style="width:100%">
@@ -143,10 +156,10 @@
                                             <th>Parameter Uji</th>
                                             <th>Jumlah Uji</th>
                                             <th>Satuan Sampel</th>
-                                            <th>No. Order</th>
-                                            <th>Kode Sampel</th>
+                                            <!--<th>No. Pesanan</th>-->
+                                            <!--<th>Kode Sampel</th>-->
                                             <th>Biaya</th>
-                                            <th>Status Uji</th>
+                                            <!--<th>Status Uji</th>-->
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -175,15 +188,15 @@
 
                                             <td>{{ $dt->jumlah }}</td>
                                             <td>{{ $dt->parameter_uji->satuan }}</td>
-                                            <td>{{ $dt->no_order }}</td>
-                                            <td>{{ $dt->kode_sampel }}</td>
+                                            <!--<td>{{ $dt->no_order }}</td>-->
+                                            <!--<td>{{ $dt->kode_sampel }}</td>-->
                                             <td width="120px">
                                                 {{ "Rp " . number_format($dt->jumlah * $dt->parameter_uji->tarif,0,',','.') }}
                                             </td>
 
-                                            <td class="btn_proses" width="120px">
-                                                <a class="btn btn-sm btn-info btn_order" id="btn_status_uji" style="padding: 6px 16px 6px 16px;" href="{{ route('status_pengujian.show', $dt->id) }}">PROSES</a>
-                                            </td>
+                                            <!--<td class="btn_proses" width="120px">-->
+                                            <!--    <a class="btn btn-sm btn-info btn_order" id="btn_status_uji" style="padding: 6px 16px 6px 16px;" href="{{ route('status_pengujian.show', $dt->id) }}">PROSES</a>-->
+                                            <!--</td>-->
 
                                             <td class="">
                                                 <div class="btn-group dropup">

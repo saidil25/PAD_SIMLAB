@@ -20,7 +20,7 @@ class ParameterPengujianController extends Controller
         $title = 'Data Parameter Uji';
         $subtitle = 'Data Parameter Uji';
 
-        $all_data = ParameterUjiModel::all();
+        $all_data = ParameterUjiModel::with('jenis')->get();
 
         return view('admin.kelola_parameter_uji.index', compact(
             'toptitle',

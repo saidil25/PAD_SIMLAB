@@ -32,6 +32,7 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Jenis</th>
                                     <th>Nama</th>
                                     <th>Deskripsi</th>
                                     <th>Tarif</th>
@@ -47,6 +48,7 @@
                                 <tr>
                                     <td><button style="padding: 6px 12px 6px 12px;" class="btn btn-secondary btn-sm">{{ $no++ }}</button></td>
                                     <td>{{ $dt->nama }}</td>
+                                    <td>{{ $dt->jenis->nama }}</td>
                                     <td width="160px">{!! $dt->deskripsi !!}</td>
                                     <td width="150px">
                                         {{ "Rp " . number_format($dt->tarif,0,',','.') }}

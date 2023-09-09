@@ -19,42 +19,41 @@
 
                     <div class="card-body">
                         {{-- <form class="row mt-3" method="POST" action="{{ route('produk_uji.store') }}" enctype="multipart/form-data">
-                            @csrf
+                        @csrf
 
-                            <div class="form-group col-md-6" hidden>
-                                <label class="">ID Transaksi</label>
-                                <div class="">
-                                    <input name="id_transaksi" value="{{ $all_data->id }}" placeholder="ID Transaksi..." type="number" class="form-control form-control-normal">
-                                </div>
+                        <div class="form-group col-md-6" hidden>
+                            <label class="">ID Transaksi</label>
+                            <div class="">
+                                <input name="id_transaksi" value="{{ $all_data->id }}" placeholder="ID Transaksi..." type="number" class="form-control form-control-normal">
                             </div>
+                        </div>
 
-                            <div class="form-group col-md-12">
-                                <label class="">Pilih Parameter Uji:</label>
-                                <select class="form-select" data-control="select2" name="id_parameter_uji" id="">
-                                    @foreach($data_parameter_uji as $parameter_uji)
-                                    <option value="{{ $parameter_uji->id }}">{{ $parameter_uji->nama . ' | Rp ' . number_format($parameter_uji->tarif,0,',','.') . ' | ' . $parameter_uji->satuan . ' | ' . $parameter_uji->kode_sni }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+                        <div class="form-group col-md-12">
+                            <label class="">Pilih Parameter Uji:</label>
+                            <select class="form-select" data-control="select2" name="id_parameter_uji" id="">
+                                @foreach($data_parameter_uji as $parameter_uji)
+                                <option value="{{ $parameter_uji->id }}">{{ $parameter_uji->nama . ' | Rp ' . number_format($parameter_uji->tarif,0,',','.') . ' | ' . $parameter_uji->satuan . ' | ' . $parameter_uji->kode_sni }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
-                            <div class="form-group col-md-12">
-                                <label class="">Nama Sampel Produk</label>
-                                <div class="">
-                                    <input placeholder="Nama Sampel Produk..." name="nama" type="text" class="form-control form-control-normal">
-                                </div>
+                        <div class="form-group col-md-12">
+                            <label class="">Nama Sampel Produk</label>
+                            <div class="">
+                                <input placeholder="Nama Sampel Produk..." name="nama" type="text" class="form-control form-control-normal">
                             </div>
+                        </div>
 
-                            <div class="form-group col-md-6">
-                                <label class="">Jumlah</label>
-                                <div class="">
-                                    <input placeholder="Jumlah..." name="jumlah" type="hidden" class="form-control form-control-normal"
-                                    value="1">
-                                </div>
+                        <div class="form-group col-md-6">
+                            <label class="">Jumlah</label>
+                            <div class="">
+                                <input placeholder="Jumlah..." name="jumlah" type="hidden" class="form-control form-control-normal" value="1">
                             </div>
+                        </div>
 
-                            <div class="form-group col-sm-12">
-                                <button type="submit" class="btn btn-primary"><i class="far fa-save" style="margin-right: 8px;"></i> Tambah Parameter Uji </button>
-                            </div>
+                        <div class="form-group col-sm-12">
+                            <button type="submit" class="btn btn-primary"><i class="far fa-save" style="margin-right: 8px;"></i> Tambah Parameter Uji </button>
+                        </div>
 
                         </form> --}}
 
@@ -89,15 +88,15 @@
                                         {{-- <td>
                                             @if($dt->no_order != NULL)
                                             {{ $dt->no_order }}
-                                            @else
+                                        @else
 
-                                            @endif
+                                        @endif
                                         </td>
                                         <td>
                                             @if($dt->kode_sampel != NULL)
                                             {{ $dt->kode_sampel }}
                                             @else
-                                            
+
                                             @endif
                                         </td> --}}
                                         <td>{{ $dt->nama }}</td>
