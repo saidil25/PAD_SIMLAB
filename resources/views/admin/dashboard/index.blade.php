@@ -40,37 +40,133 @@
         <div class="row g-5 g-xl-10 mb-5 mb-xl-10">
             <!--begin::Col-->
             <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                <div class="card bg-info">
-                    <div class="card-body text-light">
-                        <h1 class="text-light">{{ $jumlah_pengunjung }}+</h1>
-                        <span>Jumlah Pengunjung</span>
+                <div class="card bg-white">
+                    <div class="card-body text-dark"> 
+                        <div class="d-flex align-items-center">
+                            <img src="{{ asset('gambar/price-tag.png') }}" alt="Vector" style="max-width: 50px; max-height: 50px; margin-right: 15px;">
+                            <div>
+                                <h1 class="text-dark">{{ $jumlah_pengunjung }}+</h1>
+                                <span>Jumlah Pengunjung</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                <div class="card bg-primary">
-                    <div class="card-body text-light">
-                        <h1 class="text-light">{{ $jumlah_pengguna }}+</h1>
-                        <span>Jumlah Pengguna</span>
+                <div class="card bg-white">
+                    <div class="card-body text-dark">
+                        <div class="d-flex align-items-center"> 
+                            <img src="{{ asset('gambar/writing.png') }}" alt="Edit File" style="max-width: 50px; max-height: 50px; margin-right: 15px;">
+                            <div>
+                                <h1 class="text-dark">{{ $jumlah_pengguna }}+</h1>
+                                <span>Jumlah Pengguna</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
             <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                <div class="card" style="background: orange">
-                    <div class="card-body text-light">
-                        <h1 class="text-light">{{ $jumlah_pengajuan }}+</h1>
-                        <span>Jumlah Pengajuan</span>
+                <div class="card bg-white">
+                    <div class="card-body text-dark">
+                        <div class="d-flex align-items-center"> 
+                            <img src="{{ asset('gambar/growth.png') }}" alt="Marketing Growth" style="max-width: 50px; max-height: 50px; margin-right: 20px;">
+                            <div>
+                                <h1 class="text-dark">{{ $jumlah_pengajuan }}+</h1>
+                                <span>Jumlah Pengajuan</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-                <div class="card" style="background: rgb(14, 161, 48)">
-                    <div class="card-body text-light">
-                        <h1 class="text-light">{{ $jumlah_pengajuan_selesai }}+</h1>
-                        <span>Jumlah Pengajuan Selesai</span>
+                <div class="card bg-white">
+                    <div class="card-body text-dark">
+                        <div class="d-flex align-items-center"> 
+                            <img src="{{ asset('gambar/clipboard.png') }}" alt="Marketing Growth" style="max-width: 50px; max-height: 50px; margin-right: 20px;">
+                            <div>
+                                <h1 class="text-dark">{{ $jumlah_pengajuan_selesai }}+</h1>
+                                <span>Pengajuan Selesai</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+
+            
+            <div class="col-xl-5 col-xxl-6">
+                <div class="card flex-fill w-100">
+                    <div class="card-body">
+                        {!! $statuspengajuanchart->container() !!}
+                    </div>
+
+                </div>
+
+            </div>
+
+           
+
+            <div class="col-xl-5 col-xxl-6">
+                <div class="card flex-fill w-100">
+                    <div class="card-body">
+                        {!! $statuspembayaranchart->container() !!}
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="col-xl-5 col-xxl-6">
+                <div class="card flex-fill w-100">
+                    <div class="card-body">
+                        {!! $jumlahpengunjungchart->container() !!}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-xl-5 col-xxl-6">
+                <div class="card flex-fill w-100">
+                    <div class="card-body">
+                        {!! $jumlahpenggunachart->container() !!}
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="col-xl-5 col-xxl-6">
+                <div class="card flex-fill w-100">
+                    <div class="card-body">
+                        {!! $jumlahpengajuanchart->container() !!}
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-xl-5 col-xxl-6">
+                <div class="card flex-fill w-100">
+                    <div class="card-body">
+                        {!! $jumlahorderchart->container() !!}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            
             <!--end::Col-->
 
             <div class="col-md-12 col-lg-12 col-xl-12 col-xxl-12 mb-md-5 mb-xl-10">
@@ -234,6 +330,19 @@
     </div>
     <!--end::Content container-->
 </div>
-<!--end::Content-->
+<script src="{{ $jumlahpengunjungchart->cdn() }}"></script>
+<script src="{{ $statuspengajuanchart->cdn() }}"></script>
+<script src="{{ $jumlahpenggunachart->cdn() }}"></script>
+<script src="{{ $statuspembayaranchart->cdn() }}"></script>
+<script src="{{ $jumlahpengajuanchart->cdn() }}"></script>
+<script src="{{ $jumlahorderchart->cdn() }}"></script>
 
+{{ $jumlahpengunjungchart->script() }}
+{{ $statuspengajuanchart->script() }}
+{{ $jumlahpenggunachart->script() }}
+{{ $statuspembayaranchart->script() }}
+{{ $jumlahpengajuanchart->script() }}
+{{ $jumlahorderchart->script() }}
 @endsection
+
+
