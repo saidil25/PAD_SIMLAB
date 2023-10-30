@@ -18,7 +18,7 @@ class StatusPengajuanChart
         return $this->chart->pieChart()
             ->setTitle('Status Pengujian')
             ->setSubtitle('status')
-            ->addData([50, 30])
+            ->addData([50, 50])
             ->setHeight(250)
             ->setLabels(['Disetujui', 'Ditolak']);
     }
