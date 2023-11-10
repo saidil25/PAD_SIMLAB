@@ -35,28 +35,28 @@
                                 </select>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-10">
                                 <label class="">Nama</label>
                                 <div class="">
                                     <input type="text" name="nama" class="form-control form-control-normal" placeholder="Nama...">
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-10 ">
                                 <label class="">Tarif</label>
                                 <div class="">
                                     <input type="number" name="tarif" class="form-control form-control-normal" placeholder="Tarif...">
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-10">
                                 <label class="">Satuan</label>
                                 <div class="">
                                     <input type="text" name="satuan" class="form-control form-control-normal" placeholder="Satuan...">
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-6 mb-10">
                                 <label class="">Kode SNI</label>
                                 <div class="">
                                     <input type="text" name="kode_sni" class="form-control form-control-normal" placeholder="Kode SNI...">
@@ -65,18 +65,19 @@
 
                             <script src="https://cdn.tiny.cloud/1/ltswtbla0em8qkup9a7gva2zibb2qy6hbfnq4mgf778q8swq/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-12 mb-10">
                                 <label class="">Deskripsi</label>
                                 <div class="">
                                     <textarea name="deskripsi" class="form-control form-control-normal" placeholder="Deskripsi"></textarea>
                                 </div>
                             </div>
 
-                            <div class="form-group col-sm-12">
-                                <div class="">
-                                    <button type="submit" class="btn btn-primary"><i class="far fa-save" style="margin-right: 8px;"></i> Simpan </button>
-                                </div>
+                            <div class="col-sm-12 form-group">
+                                <button type="submit" class="btn btn-dark rounded-pill">
+                                    <i class="far fa-save" style="margin-right: 8px;"></i> Simpan
+                                </button>
                             </div>
+
                         </form>
                     </div>
                 </div>

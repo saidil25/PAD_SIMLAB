@@ -138,10 +138,10 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-sm-12">
-                                <div class="">
-                                    <button type="submit" class="btn btn-primary"><i class="far fa-save" style="margin-right: 8px;"></i> Simpan Data </button>
-                                </div>
+                            <div class="col-sm-12 form-group">
+                                <button type="submit" class="btn btn-dark rounded-pill">
+                                    <i class="far fa-save" style="margin-right: 8px;"></i> Simpan Data
+                                </button>
                             </div>
                         </form>
                     </div>

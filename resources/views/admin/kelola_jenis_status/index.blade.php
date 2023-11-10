@@ -24,6 +24,8 @@
                             {{ 'Tambah ' . $subtitle }}
                         </a>
 
+                        
+
                         @php
                         $no = 1;
                         @endphp

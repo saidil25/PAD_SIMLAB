@@ -82,7 +82,7 @@
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
-  --bs-body-color: #181C32;
+  --bs-body-color: #181c32;
   --bs-emphasis-color: #000000;
   --bs-emphasis-color-rgb: 0, 0, 0;
   --bs-secondary-color: rgba(24, 28, 50, 0.75);
@@ -169,6 +169,7 @@
   --bs-warning-border-subtle: #664d03;
   --bs-danger-border-subtle: #842029;
   --bs-light-border-subtle: #5E6278;
+  --bs-body-color: #181c32;
   --bs-dark-border-subtle: #3F4254;
   --bs-heading-color: #FFFFFF;
   --bs-link-color: #009ef7;
@@ -186,6 +187,29 @@
   box-sizing: border-box;
 }
 
+
+.image-container {
+  width: 325px; /* Lebar kotak gambar */
+  height: 325px; /* Tinggi kotak gambar */
+  display: flex; /* Menggunakan flexbox untuk menempatkan gambar di tengah */
+  align-items: center; /* Menempatkan gambar secara vertikal di tengah */
+  justify-content: center; /* Menempatkan gambar secara horizontal di tengah */
+  border: 2px solid #ccc; 
+  margin-left: 40px;
+  margin-top: 5px;/* Menambahkan bingkai pada kotak gambar */
+}
+
+.image-container img {
+  max-width: 100%; /* Lebar maksimum gambar adalah 100% lebar kotak */
+  max-height: 100%; /* Tinggi maksimum gambar adalah 100% tinggi kotak */
+}
+
+
+
+
+
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -197,6 +221,12 @@ body {
   background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.custom-button {
+  --bs-body-color: #181c32;
+  background-color: var(--bs-primary);
+  color: var(--bs-body-color);
 }
 
 hr {

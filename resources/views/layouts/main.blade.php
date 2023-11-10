@@ -30,6 +30,7 @@ License: For each use you must have a valid license purchased only from above li
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only)-->
     <link href="{{ asset('tema') }}/dist/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
@@ -617,33 +618,29 @@ License: For each use you must have a valid license purchased only from above li
                         <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                             <!--begin::Toolbar container-->
                             <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack">
-                                <!--begin::Page title-->
-                                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
-                                    <!--begin::Title-->
+                                <!-- Page title dan Breadcrumb -->
+                                <div class="d-flex flex-column justify-content-center flex-wrap me-3">
+                                    <!-- Title -->
                                     <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
                                         {{ $subtitle }}
                                     </h1>
-                                    <!--end::Title-->
-                                    <!--begin::Breadcrumb-->
+                                    <!-- Breadcrumb -->
                                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-                                        <!--begin::Item-->
                                         <li class="breadcrumb-item text-muted">
                                             <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">{{ $toptitle }}</a>
                                         </li>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
                                         <li class="breadcrumb-item">
                                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                         </li>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
                                         <li class="breadcrumb-item text-muted">{{ $title }}</li>
-                                        <!--end::Item-->
                                     </ul>
-                                    <!--end::Breadcrumb-->
                                 </div>
-                                <!--end::Page title-->
                             </div>
+
+
+                                <!--end::Page title and button-->
+                            </div>
+
                             <!--end::Toolbar container-->
                         </div>
                         <!--end::Toolbar-->
