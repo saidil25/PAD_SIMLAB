@@ -57,7 +57,7 @@
                                     <input type="text" value="{{ $data_edit->alamat }}" name="alamat" class="form-control form-control-normal " placeholder="Alamat">
                                 </div>
                             </div>
-
+                            
                             <div class="form-group col-md-6">
                                 <label class="">Maps</label>
                                 <div class="">

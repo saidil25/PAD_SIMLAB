@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PembayaranController;
 use App\Http\Controllers\Admin\ProdukController;
+use App\Http\Controllers\Admin\DataOrderController;
 use App\Http\Controllers\Pengguna\BerandaController;
 use App\Http\Controllers\Admin\JenisStatusController;
 use App\Http\Controllers\Admin\KelolaAdminController;
@@ -46,6 +47,7 @@ Route::resource('kelola_banner', KelolaBannerController::class)->middleware(['ch
 Route::resource('kelola_jenis_pengujian', JenisPengujianController::class)->middleware(['checkRole:Super Admin,Admin', 'auth', 'verified']);
 Route::resource('kelola_parameter_uji', ParameterPengujianController::class)->middleware(['checkRole:Super Admin,Admin', 'auth', 'verified']);
 Route::resource('kelola_jenis_status', JenisStatusController::class)->middleware(['checkRole:Super Admin,Admin', 'auth', 'verified']);
+Route::resource('kelola_data_order', DataOrderController::class)->middleware(['checkRole:Super Admin,Admin', 'auth', 'verified']);
 
 //setting
 Route::resource('kelola_pengguna', KelolaPenggunaController::class)->middleware(['checkRole:Super Admin', 'auth', 'verified']);
