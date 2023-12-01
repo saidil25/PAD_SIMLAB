@@ -447,6 +447,23 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--end:Menu item-->
 
                                 <!--begin:Menu item-->
+                                <a href="{{ route('kelola_data_order.index') }}" class="menu-item @if($title == 'Data Order') show @endif menu-accordion">
+                                    <!--begin:Menu link-->
+                                    <span class="menu-link">
+                                        <span class="menu-icon">
+                                            <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
+                                            <span class="svg-icon svg-icon-2">
+                                                <img src="{{ asset('gambar/order.png') }}" alt="Marketing Growth" style="max-width: 19px; max-height: 19px;">
+                                            </span>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        <span class="menu-title">Data Transaksi</span>
+                                    </span>
+                                    <!--end:Menu link-->
+                                </a>
+                                <!--end:Menu item-->
+
+                                <!--begin:Menu item-->
                                 <!-- <a href="{{ route('kelola_jenis_status.index') }}" class="menu-item @if($title == 'Kelola Jenis Status') show @endif menu-accordion">
                                     <span class="menu-link">
                                         <span class="menu-icon">
@@ -483,22 +500,7 @@ License: For each use you must have a valid license purchased only from above li
                                 </a>
                                 <!--end:Menu item-->
 
-                                <!--begin:Menu item-->
-                                <a href="{{ route('kelola_data_order.index') }}" class="menu-item @if($title == 'Data Order') show @endif menu-accordion">
-                                    <!--begin:Menu link-->
-                                    <span class="menu-link">
-                                        <span class="menu-icon">
-                                            <!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
-                                            <span class="svg-icon svg-icon-2">
-                                                <img src="{{ asset('gambar/order.png') }}" alt="Marketing Growth" style="max-width: 19px; max-height: 19px;">
-                                            </span>
-                                            <!--end::Svg Icon-->
-                                        </span>
-                                        <span class="menu-title">Data Order</span>
-                                    </span>
-                                    <!--end:Menu link-->
-                                </a>
-                                <!--end:Menu item-->
+                               
 
                                 <!--begin:Menu item-->
                                 <a href="{{ route('kelola_admin.index') }}" class="menu-item @if($title == 'Data Admin') show @endif menu-accordion">

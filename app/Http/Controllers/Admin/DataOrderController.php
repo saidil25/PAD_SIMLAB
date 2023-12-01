@@ -22,8 +22,8 @@ class DataOrderController extends Controller
     public function index(Request $request)
     {
         $toptitle = 'Fitur';
-        $title = 'Data Order';
-        $subtitle = 'Data Order';
+        $title = 'Data Transaksi';
+        $subtitle = 'Data Transaksi';
     
         $jumlah_pengguna = User::where('role', '=', 'Pengguna')->count();
         $jumlah_pengunjung = PengunjungModel::count();
